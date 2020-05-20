@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+echo "logs available from gitlab-logger container"
+#uncomment next line to preserve original logging
+#exec /usr/bin/tail $@

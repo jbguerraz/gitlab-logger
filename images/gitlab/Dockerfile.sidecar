@@ -1,0 +1,2 @@
+FROM gitlab/gitlab-ce:latest
+COPY scripts/tail.sidecar /usr/local/bin/tail

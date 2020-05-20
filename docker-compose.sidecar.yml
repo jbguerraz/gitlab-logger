@@ -1,0 +1,27 @@
+version: '3.3'
+
+services:
+        logger:
+          build:
+            dockerfile: ./images/gitlab-logger/Dockerfile
+            context: .
+          restart: always
+          volumes:
+            - logs:/var/log/gitlab
+        web:
+          build:
+            dockerfile: ./images/gitlab/Dockerfile.sidecar
+            context: .
+          restart: always
+          hostname: 'localhost'
+          environment:
+            GITLAB_OMNIBUS_CONFIG: |
+              external_url 'https://localhost'
+          ports:
+            - '80:80'
+            - '443:443'
+            - '22:22'
+          volumes:
+            - logs:/var/log/gitlab
+volumes:
+        logs: {}

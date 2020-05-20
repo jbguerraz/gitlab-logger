@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+#uncomment next line to preserve original logging
+#exec /usr/bin/tail $@
+exec /usr/local/bin/gitlab-logger --poll=true --exclude="sasl|config|lock|@|gzip|tgz|gz|production.log" --minlevel=3 $@
