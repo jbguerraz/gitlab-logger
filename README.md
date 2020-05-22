@@ -9,9 +9,9 @@ Contribution is more than welcomed!
 [![GitHub issues](https://img.shields.io/github/issues/jbguerraz/gitlab-logger.svg)](https://github.com/jbguerraz/gitlab-logger/issues)
 
 ## Configuration
-Configuration is flag based. When used as a tail dropin replacement, use a wrapper script if you want to to configure it:
+Configuration is flag based. When used as a tail dropin replacement, use a wrapper script if you want to configure it:
 
-for example, in /usr/local/bin/tail
+for example, in `/usr/local/bin/tail`
 ```
 #!/usr/bin/env sh
 exec /usr/local/bin/gitlab-logger --poll=true --exclude="sasl|config|lock|@|gzip|tgz|gz|production.log" --minlevel=3 $@
@@ -43,7 +43,7 @@ blacklist files based on their full path (used when watching a directory). list 
 
 ## How to give it a try
 ### Sidecar
-`docker-compose -f docker-compose.sidecar.yml build && docker-compose -f docker-compose.sidecar.yml up -d && docker logs -f gitlab-logger_web_1`
+`docker-compose -f docker-compose.sidecar.yml build && docker-compose -f docker-compose.sidecar.yml up -d && docker logs -f gitlab-logger_logger_1`
 
 ### Tail dropin replacement
 `docker-compose -f docker-compose.dropin.yml build && docker-compose -f docker-compose.dropin.yml up -d && docker logs -f gitlab-logger_web_1`
