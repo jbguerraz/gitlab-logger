@@ -12,4 +12,4 @@ RUN apk add --no-cache git \
 FROM scratch
 COPY --from=builder /tmp/gitlab-logger/gitlab-logger /
 ENTRYPOINT ["/gitlab-logger"]
-CMD ["--poll=false", "--json=false", "--minlevel=0", "--exclude=sasl|config|lock|@|gzip|tgz|gz|production.log", "/var/log/gitlab"]
+CMD ["--poll=false", "--json=false", "--minlevel=0", "--exclude=sasl|config|lock|@|gzip|tgz|gz", "/var/log/gitlab"]
