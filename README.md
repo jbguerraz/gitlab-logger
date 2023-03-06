@@ -1,4 +1,7 @@
 # Gitlab Logger
+
+**/!\ DONATED TO GITLAB CLOUD NATIVE INITIATIVE https://gitlab.com/gitlab-org/cloud-native/gitlab-logger /!\ **
+
 This allows to disable tail based Gitlab logging (by providing a no-op tail) and instead use a sidecar logger agent that tail files and output (semi-)structured logs (JSON) on stdout or, eventually, use it as a tail dropin replacement.
 
 Contribution is more than welcomed!
